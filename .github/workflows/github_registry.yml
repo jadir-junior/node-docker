@@ -2,8 +2,7 @@ name: CI to GHCR
 
 on:
   push:
-    tags:
-      branches: [master]
+    branches: [master]
 
 jobs:
   build:
