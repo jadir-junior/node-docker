@@ -1,0 +1,26 @@
+{
+  "name": "node-docker",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./**/*.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229 server.js",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "docker:image": "docker build --tag node-docker:$npm_package_version .",
+    "docker:container": "docker run -dp 8000:8000 --name $npm_package_name node-docker:$npm_package_version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "ronin-database": "^0.1.1",
+    "ronin-mocks": "^0.1.6",
+    "ronin-server": "^0.1.3"
+  },
+  "devDependencies": {
+    "cross-conf-env": "^1.2.1",
+    "mocha": "^9.1.3"
+  }
+}
